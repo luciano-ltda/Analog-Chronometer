@@ -42,6 +42,7 @@ gradient: Gradient{
         anchors.verticalCenterOffset: parent.height * 0.37
 
         z: 2
+        clip: true
 
         Text {
             id: name
@@ -93,7 +94,7 @@ gradient: Gradient{
                 anchors.bottom: parent.verticalCenter
 
                 transformOrigin: Item.Bottom
-                rotation: timer.q_seconds * 6
+                rotation: timer.q_milisseconds * 0.12;
                 }
             }
 

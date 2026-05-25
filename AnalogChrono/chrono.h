@@ -8,25 +8,22 @@
 class Chrono : public QObject{
 
     Q_OBJECT
-    Q_PROPERTY(int     q_seconds READ getSeconds WRITE setSeconds NOTIFY timeElapsed   );
-    Q_PROPERTY(QString q_Timer   READ getTimer                    NOTIFY timeElapsed  );
-    Q_PROPERTY(bool    running   READ isRunning                   NOTIFY runChanged    );
+    Q_PROPERTY(int     q_milisseconds READ getMilisseconds WRITE setSeconds NOTIFY timeElapsed   );
+    Q_PROPERTY(QString q_Timer        READ getTimer                         NOTIFY timeElapsed   );
+    Q_PROPERTY(bool    running        READ isRunning                        NOTIFY runChanged    );
 
 
 private:
-    int q_seconds;
-    bool isEnabled;
+    int    q_milisseconds;
+    bool   isEnabled;
     QTimer q_Timer;
 
 public:
     explicit Chrono(QObject *parent = nullptr);
 
-    //getters
     QString getTimer();
-    int getSeconds() const { return q_seconds; }
+    int getMilisseconds() const { return q_milisseconds; }
     bool isRunning() const { return isEnabled; }
-
-    //setters
 
 /*===========================================================================================*/
 
