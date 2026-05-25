@@ -1,16 +1,8 @@
 #include "chrono.h"
 
-<<<<<<< HEAD
-
-
-Chrono::Chrono(QObject *parent) : QObject(parent), q_seconds(0), isEnabled(false)
-{
-    q_Timer.setInterval(1000);
-=======
 Chrono::Chrono(QObject *parent) : QObject(parent), q_milisseconds(0), isEnabled(false)
 {
     q_Timer.setInterval(20); //resolução máxima de Atualização dos processos no Debian Trixie
->>>>>>> 8c5efc2 (Corrections on Text clipping and milissecond internal counter)
     connect(&q_Timer, &QTimer::timeout, this, &Chrono::OnTimeout);
 }
 
